@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IDog} from '../services/random-dog.service';
 
 @Component({
   selector: 'app-dogs',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dogs.component.scss']
 })
 export class DogsComponent implements OnInit {
+  @Input() dogs: IDog[];
 
-  constructor() { }
+  constructor() {
+    console.log(this.dogs);
+  }
 
   ngOnInit() {
+
   }
 
 }

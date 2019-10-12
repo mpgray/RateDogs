@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatTabsModule,
     MatButtonModule,
+    MatCardModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
@@ -30,3 +34,4 @@ import {MatButtonModule} from '@angular/material/button';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

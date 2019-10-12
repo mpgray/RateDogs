@@ -3,14 +3,14 @@
     <ng-template  mat-tab-label>
       <div class="tab-format">Rate Dogs</div>
     </ng-template>
-    <app-rate></app-rate>
+    <app-rate [dogsRated]= false></app-rate>
   </mat-tab>
 
   <mat-tab>
     <ng-template mat-tab-label>
       <div class="tab-format">Dogs You've Rated</div>
     </ng-template>
-    <app-dogs></app-dogs>
+    <app-rate [dogsRated]= true></app-rate>
   </mat-tab>
 </mat-tab-group>
 
