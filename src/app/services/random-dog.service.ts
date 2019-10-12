@@ -21,13 +21,13 @@ export class RandomDogService {
   constructor(private http: HttpClient) { }
 
 
-  getDog(): Observable<IDog> {
-    return this.http.get<IDog>(SERVER)
+  getDog(): Observable<any> {
+    return this.http.get<any>(SERVER)
       .pipe(catchError(this.handleError('getDog', [])));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
-    return (error: IDog): Observable<T> => {
+    return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
     };
