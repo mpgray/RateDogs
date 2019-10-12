@@ -10,13 +10,14 @@ export class RateComponent implements OnInit {
   @Input() dogsRated;
   dog: IDog;
   dogs: IDog[];
-
+  lastRating: string;
   constructor(private randomDog: RandomDogService) {
     this.dog = {
       message: '',
       status: ''
     };
     this.dogs = [];
+    this.lastRating = '';
   }
 
   getDog() {
@@ -29,7 +30,8 @@ export class RateComponent implements OnInit {
     this.dogs.push(
       {message: this.dog.message, status: r}
     );
-
+    this.getDog();
+    this.lastRating = r;
     console.log(this.dogs);
   }
   ngOnInit() {

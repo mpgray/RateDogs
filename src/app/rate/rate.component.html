@@ -1,66 +1,68 @@
-<p>
-  &nbsp;
-</p>
-<div *ngIf="dogsRated">
-  <div *ngFor="let doggie of dogs; let i = index">
-  <mat-card class="dog-card">
-    <mat-card-header>
-      <mat-card-title>{{doggie.status}}</mat-card-title>
-      <mat-card-subtitle>
 
-      </mat-card-subtitle>
+<mat-tab-group>
+  <mat-tab>
+    <ng-template  mat-tab-label>
+      <div class="tab-format">Rate Dogs</div>
+    </ng-template>
+      <div class="rating-buttons">
+        <button mat-raised-button color="primary" (click)="rate(1)">
+          <mat-icon>pets</mat-icon>
+        </button>&nbsp;
+        <button mat-raised-button color="primary" (click)="rate(2)">
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+        </button>&nbsp;
+        <button mat-raised-button color="primary" (click)="rate(3)">
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+        </button>&nbsp;
+        <button mat-raised-button color="primary" (click)="rate(4)">
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+        </button>&nbsp;
+        <button mat-raised-button color="primary" (click)="rate(5)">
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+          <mat-icon>pets</mat-icon>
+        </button>
+      </div>
+      <mat-card class="dog-card" *ngIf="this.dog.status === 'success'">
+        <mat-card-header>
+          <mat-card-title>Rate this Dog</mat-card-title>
+          <mat-card-subtitle *ngIf="lastRating">
+            You rated the last doggie {{lastRating}} <mat-icon>pets</mat-icon>
+          </mat-card-subtitle>
 
-    </mat-card-header>
-    <img mat-card-image src="{{doggie.message}}" alt="Photo of a Dog to Rate">
-    <mat-card-content>
-      Isn't he a good doggie?
-    </mat-card-content>
-  </mat-card>
-  </div>
-</div>
-  <div *ngIf="!dogsRated">
-  <div class="rating-buttons">
-    <button mat-raised-button color="primary" (click)="rate(1)">
-      <mat-icon>pets</mat-icon>
-    </button>&nbsp;
-    <button mat-raised-button color="primary" (click)="rate(2)">
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-    </button>&nbsp;
-    <button mat-raised-button color="primary" (click)="rate(3)">
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-    </button>&nbsp;
-    <button mat-raised-button color="primary" (click)="rate(4)">
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-    </button>&nbsp;
-    <button mat-raised-button color="primary" (click)="rate(5)">
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-      <mat-icon>pets</mat-icon>
-    </button>
-  </div>
-  <p>
-    &nbsp;
-  </p>
-  <mat-card class="dog-card" *ngIf="this.dog.status === 'success'">
-    <mat-card-header>
-      <mat-card-title>Rate this Dog</mat-card-title>
-      <mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{this.dog.message}}" alt="Photo of a Dog to Rate">
+        <mat-card-content>
+          Isn't he a good doggie?
+        </mat-card-content>
+      </mat-card>
 
-      </mat-card-subtitle>
+  </mat-tab>
 
-    </mat-card-header>
-    <img mat-card-image src="{{this.dog.message}}" alt="Photo of a Dog to Rate">
-    <mat-card-content>
-      Isn't he a good doggie?
-    </mat-card-content>
-  </mat-card>
-  </div>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="tab-format">Dogs You've Rated</div>
+    </ng-template>
+    <div *ngFor="let doggie of dogs; let i = index">
+      <mat-card class="dog-dashboard">
+        <mat-card-header>
+          <mat-card-title>{{doggie.status}}<mat-icon>pets</mat-icon></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{doggie.message}}" alt="Photo of a Dog to Rate">
+        <mat-card-content>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
 

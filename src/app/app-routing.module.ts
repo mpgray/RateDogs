@@ -8,16 +8,8 @@ import {DogsComponent} from './dogs/dogs.component';
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    component: RateComponent,
   },
-  {
-    path: 'rate',
-    component: RateComponent
-  },
-  {
-    path: 'dog',
-    component: DogsComponent
-  }
 ];
 
 @NgModule({
