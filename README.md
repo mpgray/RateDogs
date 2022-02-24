@@ -1,6 +1,8 @@
 # RateDogs
 
-Working Demo: https://docs.mlsgrid.com/reso-enums-to-lookups-transition
+Working Demo:https://rate-dog.web.app/
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
 ## Development server
